@@ -1,0 +1,43 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}.container {
+    
+    background:rgb(71, 44, 133);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url("cu.png"); 
+    background-size: cover; 
+    background-position: center; 
+    color: #fdf6f6; 
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+.converter {
+    display: flex;
+    flex-direction: column;
+}input, select, button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}button {
+    background-color: #fd0303;
+    color: rgb(187, 202, 204);
+    border: none;
+    cursor: pointer;
+}button:hover {
+    background-color: #a04585;
+}#result {
+    margin-top: 20px;
+    font-size: 18px;
+}

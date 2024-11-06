@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project.css">
+    <title>Currency Converter</title>
+</head>
+<body><div class="container">
+       <b> <center><h1>Currency Converter</h1></center></b>
+        <div class="converter">
+            <img  class="a"src="cu.png" height="200" width="400">
+            <input type="number" id="amount" placeholder="Amount"/>
+            <select id="currency">
+              <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="SEK">SEK</option>
+                <option value="NZD">NZD</option>
+            </select>
+            <button onclick="convert()">Convert</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function convert() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const currency = document.getElementById('currency').value;
+            const rates = {
+                USD: 1,
+                EUR: 0.85,
+                GBP: 0.75,
+                JPY: 110,
+                AUD: 1.35,
+                CAD: 1.25,
+                CHF: 0.92,
+                CNY: 6.45,
+                SEK: 8.50,
+                NZD: 1.40
+            };
+            if (isNaN(amount)) {
+                document.getElementById('result').innerText = "Please enter a valid amount.";
+                return;
+            }
+            const result = (amount * rates[currency]).toFixed(2);
+            document.getElementById('result').innerText = `Converted Amount: ${result} ${currency}`;
+        }
+    </script>
+</body>
+</html>
